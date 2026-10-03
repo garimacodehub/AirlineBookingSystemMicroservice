@@ -1,7 +1,7 @@
 package com.unitedairways.repository;
 
-import org.springframework.boot.data.autoconfigure.web.DataWebProperties.Pageable;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -11,7 +11,7 @@ import com.unitedairways.model.City;
 public interface CityRepository extends JpaRepository<City,Long> {
 
     boolean existsByCityCode(String cityCode);
-    boolean existByCityCodeAndIdNot(String cityCode,Long id);
+    boolean existsByCityCodeAndIdNot(String cityCode,Long id);
     Page<City> findByCountryCodeIgnoreCase(String countryCode,Pageable pageable); 
     @Query("""
             select c from City c
