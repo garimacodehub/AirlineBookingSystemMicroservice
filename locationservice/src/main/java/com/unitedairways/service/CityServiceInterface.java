@@ -1,13 +1,13 @@
 package com.unitedairways.service;
 
 
-import org.springframework.boot.data.autoconfigure.web.DataWebProperties.Pageable;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.unitedairways.payload.CityRequest;
 import com.unitedairways.payload.CityResponse;
 
-public interface ICityService {
+public interface CityServiceInterface {
 
     CityResponse createCity(CityRequest request);
     CityResponse getCityById(Long id);
